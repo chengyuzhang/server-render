@@ -15,8 +15,9 @@ module.exports={
         app: './entry.js'
     },
     output:{
-        path:__dirname+'',
-        filename:'bundle.js'
+        path:__dirname+'/dist/',
+        filename:'js/bundle.js',
+        publicPath:'/dist/'
     },
     module:{
         perLoaders:[//perLoaders顾名思义就是在loaders执行之前处理的

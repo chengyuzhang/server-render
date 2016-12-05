@@ -16,7 +16,7 @@ var initialState = window.__INITIAL_STATE__;
 const store = createStore(todoApp, initialState, applyMiddleware(thunkMiddleware));
 
 store.subscribe(() => {
-    console.log('abc:',store.getState(),':',new Date().getTime())
+    //console.log('abc:',store.getState(),':',new Date().getTime())
 });
 
 render(
