@@ -7,7 +7,7 @@ ___________________
 
 ###开发模式有两种:
 ######1.npm run dev
-    这是用webpack自带的webpack-dev-server的服务器来进行开发，这种开发模式下的好处是less文件不用打包进bundle.js里就可以热更新style<br/>
+这是用webpack自带的webpack-dev-server的服务器来进行开发，这种开发模式下的好处是less文件不用打包进bundle.js里就可以热更新style<br/>
 ######2.num start
 这是用webpack结合node服务器来进行开发，缺点就是less文件必须打包进bundle.js里才可以热更新style<br/>
 
