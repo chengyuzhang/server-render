@@ -1,7 +1,5 @@
 #server-render
 
-##server render test
-
 这是一个react结合redux来进行服务端渲染的例子。
 
 ###开发模式有两种:
