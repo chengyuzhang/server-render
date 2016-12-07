@@ -1,6 +1,6 @@
 # server-render
-===============
-server render test
+
+##server render test
 ___________________
 
 这是一个react结合redux来进行服务端渲染的例子。
