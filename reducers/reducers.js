@@ -38,25 +38,26 @@ function todos(state=[],action){
 }
 
 function getList(state={
-    isFetching: false,
-    didInvalidate: false,
+    isFetching: true,
+    didInvalidate: false
 },action){
     switch(action.type){
         case REQUEST:
-            return Object.assign(
-                {},
-                state,
-                {isFetching:true,didInvalidate: false}
-            );
+            return state;
         case REQUEST_SUCCESS:
             return Object.assign(
                 {},
                 state,
-                {isFetching: false,didInvalidate: false,items:action.data.goodsIndexList}
+                {
+                    isFetching: false,
+                    didInvalidate: false,
+                    items:action.data.goodsIndexList}
             );
         case REQUEST_ERROR:
             return Object.assign(
-                {didInvalidate: true}
+                {
+                    isFetching:true,
+                    didInvalidate: true}
             );
         default:
             return state;

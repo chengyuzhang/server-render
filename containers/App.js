@@ -10,6 +10,8 @@ import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
 import List from '../components/List';
 
+
+
 class App extends Component{
 
     render(){
@@ -33,7 +35,7 @@ class App extends Component{
                         dispatch(setVisibilityFilter(nextFilter))
                     }
                 />
-                <List list={list}>
+                <List >
                     {this.props.children}
                 </List>
             </div>

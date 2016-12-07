@@ -43,16 +43,19 @@ function renderFullPage(html, initialState) {
       <head>
         <meta charset="utf-8">
         <title>Redux</title>
+        <link href="http://127.0.0.1:3000/dist/css/app.css" rel="stylesheet"></head>
       </head>
       <body>
         <div id="app">${html}</div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
         </script>
-        <script src="/dist/js/bundle.js"></script>
+        <script src="http://127.0.0.1:3000/dist/js/bundle.js"></script>
       </body>
     </html>
     `
 }
 
 export default router;
+
+//<link href="http://127.0.0.1:3000/dist/css/app.css" rel="stylesheet"></head>

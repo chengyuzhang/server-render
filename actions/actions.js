@@ -1,8 +1,6 @@
 /**
  * Created by Nelson on 2016/11/28.
  */
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 import request from 'superagent';
 const charset = require('superagent-charset');
 charset(request);

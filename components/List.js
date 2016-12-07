@@ -9,18 +9,20 @@ import {getData} from '../actions/actions';
 class List extends Component{
 
     render(){
+
+        if(this.props.getList.isFetching){
+            return(
+                <ul>aaa</ul>
+            )
+        }
+
         return(
             <ul>
-                {this.props.list.map((item,index)=>
-                    <Cell content={item.goodName} key={index} />
+                {this.props.getList.items.map((item,index)=>
+                    <Cell content={item} key={index} />
                 )}
             </ul>
         )
-    }
-
-    componentWillMount(){
-        console.log('我是渲染前的输出!');
-
     }
 
     componentDidMount(){
@@ -36,9 +38,4 @@ function list(state){
 export default connect(list)(List);
 
 
-//{this.props.list.items[0].goodDesc}
-
-//{this.props.list.map((item,index)=>
-//    <Cell content={item.goodName} key={index} />
-//)}
 

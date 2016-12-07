@@ -7,7 +7,7 @@ import express from 'express';
 const app = new express();
 const port = 3001;
 
-import index from '../../router/units/index';
+import index from '../../router/units/index-build';
 
 app.use('/',index);
 

@@ -10,6 +10,7 @@ export default class Input extends Component{
     }
 
     handleChange(e){
+
         this.setState({
             value:e.target.value
         });
