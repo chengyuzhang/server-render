@@ -15,10 +15,8 @@ import {getData} from '../../actions/actions';
 import App from '../../containers/App';
 import routes from '../../router/router';
 
-
 const app = new express();
 const port = 3001;
-
 
 import index from '../../router/units/index';
 
@@ -80,9 +78,6 @@ function renderFullPage(html, initialState) {
     </html>
     `
 }
-
-
-app.use(express.static(path.join(path.resolve(path.resolve(__dirname, '..')),'..'), ''));
 
 app.listen(port, (error) => {
     if (error) {
