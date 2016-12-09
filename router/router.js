@@ -11,7 +11,7 @@ import List from '../components/List';
 
 const routes=
     <Route path="/" component={App} >
-        <IndexRoute component={List}/ >
-    </Route>;
+        <IndexRoute component={List} />
+    </Route>
 
 export default routes;
