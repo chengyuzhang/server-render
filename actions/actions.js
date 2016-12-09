@@ -41,7 +41,6 @@ export function requestError(e){
     return{type:REQUEST_ERROR,e}
 }
 export function getData(data){
-
     var postData = {
         "head":{
             "messageID":123456,
@@ -56,7 +55,7 @@ export function getData(data){
     };
 
     return (dispatch)=>{
-        dispatch(requestData({}));
+        //dispatch(requestData({}));
 
         return new Promise((resolve)=>{
             request.post('http://192.168.4.93:8081/jr-apisys/api/main')

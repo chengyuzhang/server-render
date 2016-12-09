@@ -1,45 +1,21 @@
 /**
- * Created by Nelson on 2016/11/28.
+ * Created by Nelson on 2016/12/8.
  */
-import React, { Component, PropTypes } from 'react'
+import React,{Component,PropTypes} from 'react';
+import NavLink from './NavLink'
 
-export default class Footer extends Component {
-    renderFilter(filter, name) {
-        if (filter === this.props.filter) {
-            return name
-        }
-
-        return (
-            <a href='#' onClick={e => {
-                e.preventDefault()
-                this.props.onFilterChange(filter)
-             }}>
-                {name}
-            </a>
-        )
-    }
-
-    render() {
-        return (
-            <p>
-                Show:
-                {' '}
-                {this.renderFilter('SHOW_ALL', 'All')}
-                {', '}
-                {this.renderFilter('SHOW_COMPLETED', 'Completed')}
-                {', '}
-                {this.renderFilter('SHOW_ACTIVE', 'Active')}
-                .
-            </p>
+class Footer extends Component{
+    render(){
+        return(
+            <ul className="tab">
+                <li><NavLink to="/a">a</NavLink></li>
+                <li><NavLink to="/b">b</NavLink></li>
+                <li><NavLink to="/c">c</NavLink></li>
+                <li><NavLink to="/d">d</NavLink></li>
+                <li><NavLink to="/e">e</NavLink></li>
+            </ul>
         )
     }
 }
 
-Footer.propTypes = {
-    onFilterChange: PropTypes.func.isRequired,
-    filter: PropTypes.oneOf([
-        'SHOW_ALL',
-        'SHOW_COMPLETED',
-        'SHOW_ACTIVE'
-    ]).isRequired
-}
+export default Footer

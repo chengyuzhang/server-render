@@ -7,10 +7,8 @@ import {addTodo,completeTodo,setVisibilityFilter,VisibilityFilters} from '../act
 import Input from '../components/Input';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
+import Control from '../components/Control';
 import Footer from '../components/Footer';
-import List from '../components/List';
-
-
 
 class App extends Component{
 
@@ -18,26 +16,9 @@ class App extends Component{
         const {dispatch,visibleTodos,visibilityFilter,list} =this.props;
 
         return(
-            <div>
-                <Input />
-                <AddTodo
-                    onAddClick={text=>dispatch(addTodo(text))}
-                />
-                <TodoList
-                    todos={visibleTodos}
-                    onTodoClick={index=>
-                        dispatch(completeTodo(index))
-                    }
-                />
-                <Footer
-                    filter={visibilityFilter}
-                    onFilterChange={nextFilter =>
-                        dispatch(setVisibilityFilter(nextFilter))
-                    }
-                />
-                <List >
-                    {this.props.children}
-                </List>
+            <div className="wrap">
+                {this.props.children}
+                <Footer />
             </div>
         )
     }
@@ -69,8 +50,8 @@ function selectTodos(todos, filter) {
 function select(state,props) {
     return {
         visibleTodos: selectTodos(state.todos, state.visibilityFilter),
-        visibilityFilter: state.visibilityFilter,
-        list:state.getList.items
+        visibilityFilter: state.visibilityFilter
+
     }
 }
 

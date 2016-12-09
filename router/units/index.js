@@ -13,8 +13,10 @@ import rootReducer from '../../reducers/reducers';
 import { Router, Route, browserHistory} from 'react-router';
 import {getData} from '../../actions/actions';
 import App from '../../containers/App';
+import routes from '../../router/router';
 
 router.get('/',handleRender);
+
 
 function handleRender(req, res) {
     const store = createStore(
@@ -26,7 +28,7 @@ function handleRender(req, res) {
     .then(()=>{
         const html = renderToString(
             <Provider store={store}>
-                <App />
+                <Router routes={routes} history={browserHistory}/>
             </Provider>
         );
 
@@ -37,20 +39,23 @@ function handleRender(req, res) {
 }
 
 function renderFullPage(html, initialState) {
+
+    console.log('server:',new Date().getTime());
+
     return `
     <!doctype html>
     <html>
       <head>
         <meta charset="utf-8">
         <title>Redux</title>
-        <link href="http://127.0.0.1:3000/dist/css/app.css" rel="stylesheet"></head>
+        <link href="http://127.0.0.1:3000/dist/css/app.css" rel="stylesheet">
       </head>
       <body>
         <div id="app">${html}</div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
         </script>
-        <script src="http://127.0.0.1:3000/dist/js/bundle.js"></script>
+
       </body>
     </html>
     `
@@ -59,3 +64,4 @@ function renderFullPage(html, initialState) {
 export default router;
 
 //<link href="http://127.0.0.1:3000/dist/css/app.css" rel="stylesheet"></head>
+//<script src="http://127.0.0.1:3000/dist/js/bundle.js"></script>

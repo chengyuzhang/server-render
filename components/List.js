@@ -10,7 +10,7 @@ class List extends Component{
 
     render(){
 
-        if(this.props.getList.isFetching){
+        if(this.props.list.isFetching){
             return(
                 <ul>aaa</ul>
             )
@@ -18,21 +18,27 @@ class List extends Component{
 
         return(
             <ul>
-                {this.props.getList.items.map((item,index)=>
+                {this.props.list.items.map((item,index)=>
                     <Cell content={item} key={index} />
                 )}
             </ul>
         )
     }
 
+    componentWillMount(){
+        console.log('我是渲染前的输出!');
+    }
+
     componentDidMount(){
         console.log('我是渲染后的输出!');
-        this.props.dispatch(getData({}));
+        //this.props.dispatch(getData({}));//这一句代码如果用npm run dev时要打开(仅此测试用时需要,其他根据业务自己来判断)
     }
 }
 
 function list(state){
-    return state;
+    return {
+        list:state.getList
+    }
 }
 
 export default connect(list)(List);

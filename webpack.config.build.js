@@ -59,5 +59,5 @@ module.exports={
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-    watch:true
+    watch:false
 };

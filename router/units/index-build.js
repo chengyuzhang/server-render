@@ -37,6 +37,8 @@ function handleRender(req, res) {
 }
 
 function renderFullPage(html, initialState) {
+    console.log('server:',new Date().getTime());
+
     return `
     <!doctype html>
     <html>
